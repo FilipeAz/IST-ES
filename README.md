@@ -1,2 +1,11 @@
 # IST-ES
-IST - Software Engineering 2016/2017
+
+2016/2017 Software Engineering (ES) course from the 3rd year of the Computer Science and Engineering (LEIC-A) programme @ Instituto Superior Técnico (IST)
+
+[IST](https://tecnico.ulisboa.pt/en/)
+
+[LEIC-A](https://fenix.tecnico.ulisboa.pt/cursos/leic-a)
+
+[ES](https://fenix.tecnico.ulisboa.pt/disciplinas/ESof9645111326/2016-2017/2-semestre)
+
+Projects Grade - 14.4/20
