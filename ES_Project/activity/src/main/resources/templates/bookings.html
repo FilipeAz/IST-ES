@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Bookings</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" />
+<script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>
+			Welcome to Bookings' Manager
+		</h2>
+		<br/>
+		<h3>Create Booking</h3>
+		<p class="text-danger" th:text="${error}">Error</p>
+		<form class="form-inline" th:action="@{/activityProviders/{activityProviderCode}/activities/{activityName}/activityOffers/{activityOfferBegin}/Bookings(activityProviderCode=${activityProviderCode}, activityName=${activityName}, activityOfferBegin=${activityOfferBegin} )}" th:object="${booking}" method="post">
+			<input class="btn btn-primary" type="submit" value="Adicionar Booking" />
+		</form>
+		<br/>
+		<h3>List of Bookings</h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Reference</th>
+					<th>Cancel</th>
+					<th>Cancellation Date</th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr th:each="b:${currBookings}">
+						<td th:text="${b.reference}">Reference</td>
+						<td th:text="${b.cancel}">Cancel</td>
+						<td th:text="${b.cancellationDate}">CancellationDate</td>
+					</tr>
+				</tbody>
+		</table>
+	</div>
+</body>
+</html>

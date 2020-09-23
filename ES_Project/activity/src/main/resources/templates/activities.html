@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>ActivityProviders</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" />
+<script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>
+			Welcome to Activities Manager!
+		</h2>
+		<br/>
+		<h3>Create new Activity</h3>
+		<p class="text-danger" th:text="${error}">Error</p>
+		<form class="form-inline" th:action="@{/activityProviders/{providerCode}/activities(providerCode=${providerCode})}" th:object="${activity}" method="post">
+			<label>Name: </label> <input class="form-control" type="text" th:field="*{name}" /> 
+			<label>Min Age: </label> <input class="form-control" type="text" th:field="*{minAge}" />
+			<label>Max Age: </label> <input class="form-control" type="text" th:field="*{maxAge}" />
+			<label>Capacity: </label> <input class="form-control" type="text" th:field="*{capacity}" />
+			<input class="btn btn-primary" type="submit" value="Submit" />
+		</form>
+		<br/>
+		<h3>List of Activities</h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Min Age</th>
+					<th>Max Age</th>
+					<th>Capacity</th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr th:each="act: ${activities}">
+						<td>
+							<a th:text="${act.name}" th:href="@{activities/{name}/activityOffers(name=${act.name})}">
+							Begin
+							</a>
+						</td>
+						<td th:text="${act.minAge}">Min Age</td>
+						<td th:text="${act.maxAge}">Max Age</td>
+						<td th:text="${act.capacity}">Capacity</td>
+					</tr>
+				</tbody>
+		</table>
+	</div>
+</body>
+</html>
