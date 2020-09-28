@@ -8,4 +8,4 @@
 
 [ES](https://fenix.tecnico.ulisboa.pt/disciplinas/ESof9645111326/2016-2017/2-semestre)
 
-Projects Grade - 14.4/20
+Project Grade - 14.4/20
